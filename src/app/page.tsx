@@ -148,7 +148,7 @@ export default function Home() {
                 </div>
             </div>
             <div id="projects">
-
+                {/* TODO */}
             </div>
         </main>
     )

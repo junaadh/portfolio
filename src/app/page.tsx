@@ -81,7 +81,7 @@ export default function Home() {
                     <Image src={name} alt="Typing SVG" />
                 </div>
                 <div id="intro" className='sm:px-5 sm:text-center'>
-                    <p className='px-5 pt-6 text-orange-600/60'>I'm a computer science student currently studying in Taylor's University. I have an interest in anything technology and specially in the technical know how of things.</p>
+                    <p className='px-5 pt-6 text-orange-600/60'>I&apos;m a computer science student currently studying in Taylor&apos;s University. I have an interest in anything technology and specially in the technical know how of things.</p>
                 </div>
             </div>
             <br />

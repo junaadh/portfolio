@@ -2,6 +2,7 @@ import Contacts from './components/contacts';
 import Techs from './components/techs';
 import Intoduction from './components/intro';
 import Projects from './components/projects';
+import Deco from './components/deco';
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
             <Intoduction />
             <Techs />
             <Projects />
+            <Deco />
         </main>
     )
 }

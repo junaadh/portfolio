@@ -4,7 +4,7 @@ export default function Projects() {
     return (
         <>
             <div className='pt-6 py-3 flex flex-col justify-center items-center'>
-                <h2 className='font-bold text-orange-600/60 shadow-xl'>Projects</h2>
+                <h2 className='font-bold text-2xl text-orange-600/60 shadow-xl'>Projects</h2>
             </div>
             <div className="sm:h-[320px] overflow-hidden w-[80%] sm:w-[600px] md:w-[780px]">
             <div className="flex w-[100%] h-[300px] sm:h-[400px] overflow-x-scroll snap-x snap-mandatory scroll-smooth">

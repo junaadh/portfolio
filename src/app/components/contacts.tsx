@@ -10,7 +10,7 @@ Image
 
 export default function Contacts() {
     return (
-        <div id="socials" className='w-[80%] sm:w-[600px] md:w-[780px] h-[20%] sm:h-[90px] bg-gradient-to-br from-gray-800 via-slate-700 to-gray-700 dark:from-black dark:via-slate-800 dark:to-bg-gray-800 rounded-2xl shadow-2xl flex items-center justify-evenly my-9 sm:-mt-9'>
+        <div id="socials" className='w-[80%] sm:w-[600px] md:w-[780px] h-[20%] sm:h-[90px] bg-gradient-to-br from-gray-800 via-slate-700 to-gray-700 dark:from-black dark:via-slate-800 dark:to-bg-gray-800 rounded-2xl shadow-2xl flex items-center justify-evenly my-9'>
             <a href="https://www.instagram.com/junaadh_/" className='flex justify-center items-center h-[40px] w-[40px] rounded-full bg-opacity-[40%] bg-gray-500 my-4 shadow-2xl' target='_blank'>
             <Image
                 src={insta}

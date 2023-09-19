@@ -86,7 +86,7 @@ export default function Stats() {
     return (
         <>
             <h2 className="sm:pt-[40px] p-5 font-bold text-2xl text-orange-600/60 shadow-xl" >GitHub Language Stats</h2>
-            <div id="deco" className='flex flex-col py-2 mb-5 w-[80%] sm:w-[600px] md:w-[780px] h-auto bg-gradient-to-br from-black/60 via-slate-900 to bg-gray-800 rounded-2xl shadow-2xl items-center justify-evenly'>
+            <div id="deco" className='flex flex-col py-2 mb-5 w-[80%] sm:w-[600px] md:w-[780px] h-auto bg-gradient-to-br from-gray-500 via-slate-800 to-gray-800 dark:from-black dark:via-slate-800 dark:to-bg-gray-800 rounded-2xl shadow-2xl items-center justify-evenly'>
                     {/* Language stats will be added here */}
             </div>
         </>

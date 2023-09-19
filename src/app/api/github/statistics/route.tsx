@@ -1,3 +1,4 @@
+import { error } from "console";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -10,7 +11,7 @@ export async function GET() {
 
         } catch (error: any) {
             console.error(`Error fetching language stats for ${owner}/${repo}:`, error);
-            return {};
+            return {error};
         }
     }
 
@@ -32,24 +33,37 @@ export async function GET() {
             }
 
             const repoLanguageStats = await getLanguageStats(username, repo.name)
-            for (const language in repoLanguageStats) {
-                if (languageStats[language]) {
-                    languageStats[language] += repoLanguageStats[language]
-                } else {
-                    languageStats[language] = repoLanguageStats[language]
+            if (repoLanguageStats) {
+                for (const language in repoLanguageStats) {
+                    if (languageStats[language]) {
+                        languageStats[language] += repoLanguageStats[language]
+                    } else {
+                        languageStats[language] = repoLanguageStats[language]
+                    }
                 }
             }
+        }
 
+        const languageArray = Object.entries(languageStats)
+        languageArray.sort((a, b) => b[1] - a[1])
+
+        const sortedLanguageStats: LanguageStats = {}
+        for (const [language, count] of languageArray) {
+            sortedLanguageStats[language] = count
         }
 
         const response = NextResponse.json({
             success: true,
-            languageStats: languageStats
+            languageStats: sortedLanguageStats
         })
 
         return response
 
     } catch (error: any) {
         console.log("Error getting language stats")
+        return NextResponse.json({
+            success: false,
+            error: error
+        }, {status: 404})
     }
 }

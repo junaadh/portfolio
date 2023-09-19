@@ -5,7 +5,7 @@ import name from '../../../public/name.svg';
 
 export default function Intoduction() {
     return (
-        <div id="container" className='p-4  w-[80%] sm:w-[600px] md:w-[780px] h-[80%] sm:h-[500px] bg-gradient-to-br from-gray-500 via-slate-800 to-gray-800 dark:from-black dark:via-slate-800 dark:to-bg-gray-800 rounded-2xl shadow-2xl flex flex-col items-center justify-center'>
+        <div id="container" className='p-4  w-[80%] sm:w-[600px] md:w-[780px] h-[80%] sm:h-[500px] bg-gradient-to-br from-gray-800 via-slate-700 to-gray-700 dark:from-black dark:via-slate-800 dark:to-bg-gray-800 rounded-2xl shadow-2xl flex flex-col items-center justify-center'>
             <div id="memoji" className='pb-4'>
                 <Image
                     src={memoji}

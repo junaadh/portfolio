@@ -1,5 +1,7 @@
 'use client';
 import { useEffect } from "react";
+import Progress from "./progress";
+import { createRoot } from "react-dom/client";
 
 export default function Stats() {
     // type ColorMap = {
@@ -40,40 +42,17 @@ export default function Stats() {
                     })
                     .then((languageStats: Record<string, number>) => {
             
+                    const totalLanguageScore = Object.values(languageStats).reduce((total, score) => total + score, 0);
                     const decoContainer = document.getElementById('deco');
 
                     if (decoContainer) {
-                        const totalLanguageScore = Object.values(languageStats).reduce((total, score) => total + score, 0);
-
-                        Object.keys(languageStats).forEach((language) => {
-                            const progressBar = document.createElement('div');
-                            progressBar.className = 'bg-blue-500 h-3 border border-blue-600 mt-2';
-
-                            const progressWidth = (languageStats[language] / totalLanguageScore) * 100;
-                            progressBar.style.width = `${progressWidth}%`;
-
-                            const languageElement = document.createElement('div');
-                            languageElement.className = 'text-orange-600/60 text-bold text-lg';
-                            languageElement.textContent = `${language} (${Math.floor(progressWidth)}%)`;
-
-                            const nameBox = document.createElement('div');
-                            nameBox.className = 'flex h-full w-full';
-                            nameBox.appendChild(languageElement);
-
-                            const progressBox = document.createElement('div');
-                            progressBox.className = 'flex h-full w-full';
-                            progressBox.appendChild(progressBar);
-                            
-                            const secondaryBox = document.createElement('div');
-                            secondaryBox.className = 'flex w-full h-full sm:px-10 sm:pr-4 mt-2 px-3 sm:pl-[30px] sm:pr-[70px]';
-                            secondaryBox.appendChild(nameBox);
-                            secondaryBox.appendChild(progressBox);
-
-                            const mainBox = document.createElement('div');
-                            mainBox.className = 'flex flex-col items-center justify-center w-full h-full';
-                            mainBox.appendChild(secondaryBox);
-                            decoContainer.appendChild(mainBox);
-                        });
+                        createRoot(decoContainer).render(
+                            <>
+                                {Object.keys(languageStats).map((language) => (
+                                    <Progress key={language} language={language} percentage={(languageStats[language] / totalLanguageScore) * 100} />
+                                ))}
+                            </>
+                        )
                     }
                 })
             } catch (error: any) {
@@ -85,9 +64,9 @@ export default function Stats() {
 
     return (
         <>
-            <h2 className="sm:pt-[40px] p-5 font-bold text-2xl text-orange-600/60 shadow-xl" >GitHub Language Stats</h2>
-            <div id="deco" className='flex flex-col py-2 mb-5 w-[80%] sm:w-[600px] md:w-[780px] h-auto bg-gradient-to-br from-gray-500 via-slate-800 to-gray-800 dark:from-black dark:via-slate-800 dark:to-bg-gray-800 rounded-2xl shadow-2xl items-center justify-evenly'>
-                    {/* Language stats will be added here */}
+            <h2 className="sm:pt-[40px] p-5 font-bold text-2xl text-orange-600/60" >GitHub Language Stats</h2>
+            <div id="deco" className='flex flex-col py-2 mb-5 w-[80%] sm:w-[600px] md:w-[780px] h-auto bg-gradient-to-br from-gray-800 via-slate-700 to-gray-700 dark:from-black dark:via-slate-800 dark:to-bg-gray-800 rounded-2xl shadow-2xl items-center justify-evenly'>
+                {/* Progress Bars gonna dynamically be added */}
             </div>
         </>
     )

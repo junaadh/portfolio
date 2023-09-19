@@ -7,7 +7,7 @@ export default function Projects() {
                 <h2 className='font-bold text-2xl text-orange-600/60 shadow-xl'>Projects</h2>
             </div>
             <div className="sm:h-[320px] overflow-hidden w-[80%] sm:w-[600px] md:w-[780px]">
-            <div className="flex w-[100%] h-[300px] sm:h-[400px] overflow-x-scroll snap-x snap-mandatory scroll-smooth">
+            <div className="flex w-auto h-auto md:h-[400px] overflow-x-scroll snap-x snap-mandatory scroll-smooth">
                 <div className="w-full h-[80%] flex-none mx-10 snap-center">
                     <a id="1" href='https://github.com/junaadh/echo-rs' target='_blank' className='w-full h-full flex rounded-2xl'>
                         <Image 

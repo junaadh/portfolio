@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Junaadh Portfolio',
   description: 'Portfolio of Moosa Junaadh',
+  appleWebApp:  true,
 }
 
 export default function RootLayout({

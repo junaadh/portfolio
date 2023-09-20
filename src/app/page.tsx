@@ -4,6 +4,7 @@ import Intoduction from './components/intro';
 import Projects from './components/projects';
 import Stats from './components/stats';
 import Slider from './components/slider';
+import Footer from './components/footer';
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             <Techs />
             <Projects />
             <Stats />
+            <Footer />
         </main>
     )
 }

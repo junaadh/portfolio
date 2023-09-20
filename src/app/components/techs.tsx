@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 import rust from '../../../public/Rust.svg';
 import ts from '../../../public/TypeScript.svg';
 import js from '../../../public/JS.svg';

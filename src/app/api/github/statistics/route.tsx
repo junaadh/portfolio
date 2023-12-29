@@ -31,9 +31,9 @@ export async function GET() {
     const languageStats: LanguageStats = {};
 
     for (const repo of repoResponse) {
-      if (repo.name.toLowerCase() === ".config") {
-        continue;
-      }
+      // if (repo.name.toLowerCase() === ".config") {
+      // continue;
+      // }
 
       const repoLanguageStats = await getLanguageStats(username, repo.name);
       if (repoLanguageStats) {
